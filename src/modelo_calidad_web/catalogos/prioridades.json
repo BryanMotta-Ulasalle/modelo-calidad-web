@@ -1,0 +1,8 @@
+[
+  {"valor": "critica", "nombre": "Crítica"},
+  {"valor": "alta", "nombre": "Alta"},
+  {"valor": "media", "nombre": "Media"},
+  {"valor": "baja", "nombre": "Baja"},
+  {"valor": "revision", "nombre": "Revisión"}
+]
+

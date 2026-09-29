@@ -1,0 +1,12 @@
+[
+  {"id": "RN-01", "nombre": "Conservación del dato original", "descripcion": "Conservar el valor fuente y la representación normalizada."},
+  {"id": "RN-02", "nombre": "Registro de versión", "descripcion": "Registrar la versión de la herramienta y del catálogo aplicado."},
+  {"id": "RN-03", "nombre": "Asignación de indicador", "descripcion": "Relacionar cada resultado utilizado con un indicador y una dimensión principal."},
+  {"id": "RN-04", "nombre": "Unidad común", "descripcion": "Normalizar tiempos a milisegundos durante el procesamiento."},
+  {"id": "RN-05", "nombre": "Resultado incierto", "descripcion": "Clasificar resultados inciertos como requiere revisión."},
+  {"id": "RN-06", "nombre": "Resultado no aplicable", "descripcion": "Clasificar los resultados no aplicables como no evaluados."},
+  {"id": "RN-07", "nombre": "Duplicidad entre herramientas", "descripcion": "Agrupar coincidencias y conservar todas las evidencias de origen."},
+  {"id": "RN-08", "nombre": "Ausencia de hallazgos", "descripcion": "Limitar el estado favorable a la regla efectivamente ejecutada."},
+  {"id": "RN-09", "nombre": "Prioridad de axe", "descripcion": "Mapear critical, serious, moderate y minor a crítica, alta, media y baja."},
+  {"id": "RN-10", "nombre": "Prioridad de WAVE", "descripcion": "Mapear errores mediante catálogo y conservar alertas como revisión."}
+]

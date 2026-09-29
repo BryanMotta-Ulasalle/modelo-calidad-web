@@ -1,0 +1,31 @@
+{
+  "idResultado": "RES-LH-001",
+  "idEvaluacion": "EVAL-PRUEBA-001",
+  "idModuloVista": "MOD-INICIO",
+  "herramienta": "Lighthouse",
+  "versionHerramienta": "ejemplo-controlado",
+  "identificadorOrigen": "largest-contentful-paint",
+  "tipoResultado": "metrica",
+  "valorOriginal": 3.2,
+  "unidad": "s",
+  "ubicacionElemento": "https://portal.ejemplo.edu/inicio",
+  "idIndicador": "P-02",
+  "idDimension": "D-RE",
+  "referenciaTecnica": ["Web Vitals - LCP", "Lighthouse performance audit"],
+  "estadoOriginal": "numericValue",
+  "estadoNormalizado": "intermedio",
+  "prioridad": null,
+  "evidencia": {
+    "numericValueMs": 3200,
+    "perfil": "mobile",
+    "displayValue": "3.2 s"
+  },
+  "fechaHora": "2026-09-21T10:10:00-05:00",
+  "datosOriginales": {
+    "id": "largest-contentful-paint",
+    "numericValue": 3200,
+    "numericUnit": "millisecond",
+    "displayValue": "3.2 s"
+  }
+}
+

@@ -1,0 +1,29 @@
+{
+  "idResultado": "RES-WAVE-001",
+  "idEvaluacion": "EVAL-PRUEBA-001",
+  "idModuloVista": "MOD-INICIO",
+  "herramienta": "WAVE",
+  "versionHerramienta": "ejemplo-controlado",
+  "identificadorOrigen": "contrast",
+  "tipoResultado": "hallazgo",
+  "valorOriginal": "Relación de contraste informada: 3.1:1",
+  "unidad": null,
+  "ubicacionElemento": "#menu-principal a:nth-child(2)",
+  "idIndicador": "A-04",
+  "idDimension": "D-AC",
+  "referenciaTecnica": ["WCAG 2.2 - 1.4.3"],
+  "estadoOriginal": "contrast_error",
+  "estadoNormalizado": "desfavorable",
+  "prioridad": "alta",
+  "evidencia": {
+    "mensaje": "El contraste informado no alcanza el mínimo definido para el texto.",
+    "selector": "#menu-principal a:nth-child(2)"
+  },
+  "fechaHora": "2026-09-21T10:00:00-05:00",
+  "datosOriginales": {
+    "type": "contrast",
+    "contrastdata": "3.1:1",
+    "xpath": "#menu-principal a:nth-child(2)"
+  }
+}
+

@@ -1,0 +1,23 @@
+[
+  {"id": "A-01", "dimension": "D-AC", "nombre": "Alternativas textuales", "referencias": ["WCAG 2.2 - 1.1.1"]},
+  {"id": "A-02", "dimension": "D-AC", "nombre": "Estructura semántica", "referencias": ["WCAG 2.2 - 1.3.1", "WCAG 2.2 - 2.4.6"]},
+  {"id": "A-03", "dimension": "D-AC", "nombre": "Etiquetas de formularios", "referencias": ["WCAG 2.2 - 1.3.1", "WCAG 2.2 - 3.3.2", "WCAG 2.2 - 4.1.2"]},
+  {"id": "A-04", "dimension": "D-AC", "nombre": "Contraste de texto", "referencias": ["WCAG 2.2 - 1.4.3"]},
+  {"id": "A-05", "dimension": "D-AC", "nombre": "Título del documento", "referencias": ["WCAG 2.2 - 2.4.2"]},
+  {"id": "A-06", "dimension": "D-AC", "nombre": "Idioma del documento", "referencias": ["WCAG 2.2 - 3.1.1"]},
+  {"id": "A-07", "dimension": "D-AC", "nombre": "Nombre de enlaces y controles", "referencias": ["WCAG 2.2 - 2.4.4", "WCAG 2.2 - 4.1.2"]},
+  {"id": "A-08", "dimension": "D-AC", "nombre": "Validez de ARIA", "referencias": ["WCAG 2.2 - 1.3.1", "WCAG 2.2 - 4.1.2"]},
+  {"id": "A-09", "dimension": "D-AC", "nombre": "Operabilidad mediante teclado", "referencias": ["WCAG 2.2 - 2.1.1", "WCAG 2.2 - 2.4.7"]},
+  {"id": "P-01", "dimension": "D-RE", "nombre": "First Contentful Paint (FCP)", "unidad": "s"},
+  {"id": "P-02", "dimension": "D-RE", "nombre": "Largest Contentful Paint (LCP)", "unidad": "s"},
+  {"id": "P-03", "dimension": "D-RE", "nombre": "Total Blocking Time (TBT)", "unidad": "ms"},
+  {"id": "P-04", "dimension": "D-RE", "nombre": "Cumulative Layout Shift (CLS)", "unidad": "proporcion"},
+  {"id": "P-05", "dimension": "D-RE", "nombre": "Speed Index (SI)", "unidad": "s"},
+  {"id": "P-06", "dimension": "D-RE", "nombre": "Puntuación de rendimiento", "unidad": "0-100", "contextual": true},
+  {"id": "U-01", "dimension": "D-US", "nombre": "Configuración adaptable de la vista"},
+  {"id": "U-02", "dimension": "D-US", "nombre": "Posibilidad de ampliación"},
+  {"id": "U-03", "dimension": "D-US", "nombre": "Tamaño y separación de objetivos táctiles"},
+  {"id": "U-04", "dimension": "D-US", "nombre": "Pegado permitido en campos de entrada"},
+  {"id": "U-05", "dimension": "D-US", "nombre": "Errores de ejecución con posible impacto en la interacción"}
+]
+

@@ -1,0 +1,2 @@
+[console_scripts]
+modelo-calidad-web = modelo_calidad_web.main:main

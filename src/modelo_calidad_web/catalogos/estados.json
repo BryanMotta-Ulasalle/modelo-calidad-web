@@ -1,0 +1,8 @@
+[
+  {"id": "EN-01", "valor": "favorable", "nombre": "Favorable"},
+  {"id": "EN-02", "valor": "intermedio", "nombre": "Intermedio"},
+  {"id": "EN-03", "valor": "desfavorable", "nombre": "Desfavorable"},
+  {"id": "EN-04", "valor": "requiere_revision", "nombre": "Requiere revisión"},
+  {"id": "EN-05", "valor": "no_evaluado", "nombre": "No evaluado"}
+]
+

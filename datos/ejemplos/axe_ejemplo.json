@@ -1,0 +1,31 @@
+{
+  "idResultado": "RES-AXE-001",
+  "idEvaluacion": "EVAL-PRUEBA-001",
+  "idModuloVista": "MOD-INICIO",
+  "herramienta": "axe DevTools",
+  "versionHerramienta": "ejemplo-controlado",
+  "identificadorOrigen": "meta-viewport",
+  "tipoResultado": "hallazgo",
+  "valorOriginal": false,
+  "unidad": null,
+  "ubicacionElemento": "meta[name='viewport']",
+  "idIndicador": "U-02",
+  "idDimension": "D-US",
+  "referenciaTecnica": ["axe rule: meta-viewport"],
+  "estadoOriginal": "violation",
+  "estadoNormalizado": "desfavorable",
+  "prioridad": "alta",
+  "evidencia": {
+    "impact": "serious",
+    "mensaje": "La configuración del viewport restringe la ampliación.",
+    "nodos": 1
+  },
+  "fechaHora": "2026-09-21T10:05:00-05:00",
+  "datosOriginales": {
+    "id": "meta-viewport",
+    "impact": "serious",
+    "resultType": "violations",
+    "nodes": ["meta[name='viewport']"]
+  }
+}
+

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "D-AC",
+    "nombre": "Accesibilidad",
+    "proposito": "Organizar hallazgos técnicos relacionados con la percepción, comprensión y operación del contenido."
+  },
+  {
+    "id": "D-RE",
+    "nombre": "Rendimiento",
+    "proposito": "Representar métricas de laboratorio de carga, capacidad de respuesta y estabilidad visual."
+  },
+  {
+    "id": "D-US",
+    "nombre": "Usabilidad automatizable",
+    "proposito": "Representar condiciones técnicas automatizables relacionadas con la interacción."
+  }
+]
+
