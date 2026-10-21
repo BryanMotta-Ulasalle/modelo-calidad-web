@@ -1,0 +1,34 @@
+{
+  "lighthouseVersion": "ejemplo-controlado",
+  "fetchTime": "2026-09-21T10:10:00-05:00",
+  "requestedUrl": "https://portal.ejemplo.edu/inicio",
+  "finalDisplayedUrl": "https://portal.ejemplo.edu/inicio",
+  "userAgent": "ejemplo-controlado",
+  "gatherMode": "navigation",
+  "configSettings": {"formFactor": "mobile", "screenEmulation": {"mobile": true}},
+  "environment": {"networkUserAgent": "ejemplo-controlado"},
+  "runWarnings": [],
+  "categories": {
+    "performance": {
+      "id": "performance",
+      "score": 0.72,
+      "auditRefs": [
+        {"id": "largest-contentful-paint", "weight": 25, "group": "metrics"},
+        {"id": "unused-javascript", "weight": 0, "group": "diagnostics"}
+      ]
+    }
+  },
+  "audits": {
+    "largest-contentful-paint": {
+      "id": "largest-contentful-paint",
+      "title": "Largest Contentful Paint",
+      "numericValue": 3200,
+      "numericUnit": "millisecond",
+      "displayValue": "3.2 s",
+      "score": 0.6,
+      "scoreDisplayMode": "numeric"
+    },
+    "unused-javascript": {"id": "unused-javascript", "score": 0.3, "scoreDisplayMode": "numeric"}
+  },
+  "notaControlada": "LHR de prueba construido manualmente; no es un reporte de Lighthouse sobre el portal"
+}

@@ -1,0 +1,124 @@
+{
+  "versionEsquema": "0.2.0",
+  "formatoFuente": "wave-extension-captura-v1",
+  "procedencia": "transcripcion_manual",
+  "herramienta": "WAVE",
+  "versionHerramienta": "3.3.1.0",
+  "versionCatalogoMapeos": "1.1.0",
+  "idEvaluacion": "EVAL-W3C-PUBLICA-001",
+  "idModuloVista": "W3C-BAD-HOME",
+  "fechaHora": "2026-10-06T04:20:38.051000Z",
+  "contexto": {
+    "url": "https://www.w3.org/WAI/demos/bad/before/home.html",
+    "perfilAcceso": "público, sin autenticación",
+    "dispositivo": "escritorio",
+    "navegador": "Chromium 153.0.8010.12",
+    "procedimiento": "Extensión WAVE instalada, activada en Chromium mediante su service worker"
+  },
+  "resultados": [
+    {
+      "idResultado": "wave-extension-captura-v1:contrast:0",
+      "identificadorOrigen": "contrast",
+      "idIndicador": "A-04",
+      "idDimension": "D-AC",
+      "referenciaTecnica": [
+        "WCAG 2.2 - 1.4.3"
+      ],
+      "tipoResultado": "hallazgo",
+      "valorOriginal": "3.88:1",
+      "unidadOriginal": null,
+      "ubicacionElemento": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[2]/TBODY[1]/TR[1]/TD[5]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/FONT[1]/B[1]",
+      "estadoOriginal": "transcrito",
+      "estadoNormalizado": null,
+      "prioridad": null,
+      "evidencia": {
+        "observacion": "Primer elemento de contrast: Very low contrast; relación 3.88, texto #41545d y fondo #a9b8bf según WAVE.",
+        "referenciaCaptura": "wave_extension_pantalla.png",
+        "detalleFuente": "wave_extension_raw.json#/categories/contrast/items/contrast/contrastdata/0"
+      },
+      "rutaOrigen": "/resultados/0",
+      "datosOriginales": {
+        "identificador": "contrast",
+        "valor": "3.88:1",
+        "ubicacion": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[2]/TBODY[1]/TR[1]/TD[5]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/FONT[1]/B[1]",
+        "evidencia": {
+          "observacion": "Primer elemento de contrast: Very low contrast; relación 3.88, texto #41545d y fondo #a9b8bf según WAVE.",
+          "referenciaCaptura": "wave_extension_pantalla.png",
+          "detalleFuente": "wave_extension_raw.json#/categories/contrast/items/contrast/contrastdata/0"
+        }
+      }
+    },
+    {
+      "idResultado": "wave-extension-captura-v1:alt_missing:1",
+      "identificadorOrigen": "alt_missing",
+      "idIndicador": "A-01",
+      "idDimension": "D-AC",
+      "referenciaTecnica": [
+        "WCAG 2.2 - 1.1.1"
+      ],
+      "tipoResultado": "hallazgo",
+      "valorOriginal": "Missing alternative text",
+      "unidadOriginal": null,
+      "ubicacionElemento": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/IMG[1]",
+      "estadoOriginal": "transcrito",
+      "estadoNormalizado": null,
+      "prioridad": null,
+      "evidencia": {
+        "observacion": "Primer elemento de alt_missing; el panel WAVE mostró 19 imágenes con texto alternativo ausente.",
+        "referenciaCaptura": "wave_extension_pantalla.png",
+        "detalleFuente": "wave_extension_raw.json#/categories/error/items/alt_missing/xpaths/0"
+      },
+      "rutaOrigen": "/resultados/1",
+      "datosOriginales": {
+        "identificador": "alt_missing",
+        "valor": "Missing alternative text",
+        "ubicacion": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/IMG[1]",
+        "evidencia": {
+          "observacion": "Primer elemento de alt_missing; el panel WAVE mostró 19 imágenes con texto alternativo ausente.",
+          "referenciaCaptura": "wave_extension_pantalla.png",
+          "detalleFuente": "wave_extension_raw.json#/categories/error/items/alt_missing/xpaths/0"
+        }
+      }
+    }
+  ],
+  "entradaOriginal": {
+    "formato": "wave-extension-captura-v1",
+    "procedencia": "transcripcion_manual",
+    "nota": "Transcripción humana de dos hallazgos observados en WAVE; no es una exportación automática ni representa los 82 iconos detectados.",
+    "captura": {
+      "fechaHora": "2026-10-06T04:20:38.051Z",
+      "versionExtension": "3.3.1.0",
+      "url": "https://www.w3.org/WAI/demos/bad/before/home.html",
+      "contexto": {
+        "perfilAcceso": "público, sin autenticación",
+        "dispositivo": "escritorio",
+        "navegador": "Chromium 153.0.8010.12",
+        "procedimiento": "Extensión WAVE instalada, activada en Chromium mediante su service worker"
+      }
+    },
+    "resultados": [
+      {
+        "identificador": "contrast",
+        "valor": "3.88:1",
+        "ubicacion": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[2]/TBODY[1]/TR[1]/TD[5]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/FONT[1]/B[1]",
+        "evidencia": {
+          "observacion": "Primer elemento de contrast: Very low contrast; relación 3.88, texto #41545d y fondo #a9b8bf según WAVE.",
+          "referenciaCaptura": "wave_extension_pantalla.png",
+          "detalleFuente": "wave_extension_raw.json#/categories/contrast/items/contrast/contrastdata/0"
+        }
+      },
+      {
+        "identificador": "alt_missing",
+        "valor": "Missing alternative text",
+        "ubicacion": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/IMG[1]",
+        "evidencia": {
+          "observacion": "Primer elemento de alt_missing; el panel WAVE mostró 19 imágenes con texto alternativo ausente.",
+          "referenciaCaptura": "wave_extension_pantalla.png",
+          "detalleFuente": "wave_extension_raw.json#/categories/error/items/alt_missing/xpaths/0"
+        }
+      }
+    ]
+  },
+  "textoOriginal": "{\n  \"formato\": \"wave-extension-captura-v1\",\n  \"procedencia\": \"transcripcion_manual\",\n  \"nota\": \"Transcripción humana de dos hallazgos observados en WAVE; no es una exportación automática ni representa los 82 iconos detectados.\",\n  \"captura\": {\n    \"fechaHora\": \"2026-10-06T04:20:38.051Z\",\n    \"versionExtension\": \"3.3.1.0\",\n    \"url\": \"https://www.w3.org/WAI/demos/bad/before/home.html\",\n    \"contexto\": {\n      \"perfilAcceso\": \"público, sin autenticación\",\n      \"dispositivo\": \"escritorio\",\n      \"navegador\": \"Chromium 153.0.8010.12\",\n      \"procedimiento\": \"Extensión WAVE instalada, activada en Chromium mediante su service worker\"\n    }\n  },\n  \"resultados\": [\n    {\n      \"identificador\": \"contrast\",\n      \"valor\": \"3.88:1\",\n      \"ubicacion\": \"/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[2]/TBODY[1]/TR[1]/TD[5]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/FONT[1]/B[1]\",\n      \"evidencia\": {\n        \"observacion\": \"Primer elemento de contrast: Very low contrast; relación 3.88, texto #41545d y fondo #a9b8bf según WAVE.\",\n        \"referenciaCaptura\": \"wave_extension_pantalla.png\",\n        \"detalleFuente\": \"wave_extension_raw.json#/categories/contrast/items/contrast/contrastdata/0\"\n      }\n    },\n    {\n      \"identificador\": \"alt_missing\",\n      \"valor\": \"Missing alternative text\",\n      \"ubicacion\": \"/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/IMG[1]\",\n      \"evidencia\": {\n        \"observacion\": \"Primer elemento de alt_missing; el panel WAVE mostró 19 imágenes con texto alternativo ausente.\",\n        \"referenciaCaptura\": \"wave_extension_pantalla.png\",\n        \"detalleFuente\": \"wave_extension_raw.json#/categories/error/items/alt_missing/xpaths/0\"\n      }\n    }\n  ]\n}\n",
+  "sha256Original": "04a8ac6a619a33582c73b760e81d277266a36d92e48475a08a84d881faaecf25"
+}

@@ -1,0 +1,26 @@
+{
+  "version": "1.1.0",
+  "mapeos": {
+    "wave-extension-captura-v1": {
+      "contrast": {"indicador": "A-04", "dimension": "D-AC", "referencias": ["WCAG 2.2 - 1.4.3"]},
+      "alt_missing": {"indicador": "A-01", "dimension": "D-AC", "referencias": ["WCAG 2.2 - 1.1.1"]}
+    },
+    "axe-core-playwright": {
+      "meta-viewport": {"indicador": "U-02", "dimension": "D-US", "referencias": ["axe rule: meta-viewport"]},
+      "color-contrast": {"indicador": "A-04", "dimension": "D-AC", "referencias": ["WCAG 2.2 - 1.4.3"]},
+      "html-has-lang": {"indicador": "A-06", "dimension": "D-AC", "referencias": ["axe rule: html-has-lang", "WCAG 2.2 - 3.1.1"]},
+      "image-alt": {"indicador": "A-01", "dimension": "D-AC", "referencias": ["axe rule: image-alt", "WCAG 2.2 - 1.1.1"]},
+      "landmark-one-main": {"indicador": "A-02", "dimension": "D-AC", "referencias": ["axe rule: landmark-one-main"]},
+      "link-name": {"indicador": "A-07", "dimension": "D-AC", "referencias": ["axe rule: link-name", "WCAG 2.2 - 2.4.4"]},
+      "region": {"indicador": "A-02", "dimension": "D-AC", "referencias": ["axe rule: region"]},
+      "select-name": {"indicador": "A-03", "dimension": "D-AC", "referencias": ["axe rule: select-name", "WCAG 2.2 - 4.1.2"]}
+    },
+    "lighthouse-result": {
+      "first-contentful-paint": {"indicador": "P-01", "dimension": "D-RE", "referencias": ["Lighthouse: first-contentful-paint"], "unidadOrigen": "millisecond"},
+      "largest-contentful-paint": {"indicador": "P-02", "dimension": "D-RE", "referencias": ["Lighthouse: largest-contentful-paint"], "unidadOrigen": "millisecond"},
+      "total-blocking-time": {"indicador": "P-03", "dimension": "D-RE", "referencias": ["Lighthouse: total-blocking-time"], "unidadOrigen": "millisecond"},
+      "cumulative-layout-shift": {"indicador": "P-04", "dimension": "D-RE", "referencias": ["Lighthouse: cumulative-layout-shift"], "unidadOrigen": "unitless"},
+      "speed-index": {"indicador": "P-05", "dimension": "D-RE", "referencias": ["Lighthouse: speed-index"], "unidadOrigen": "millisecond"}
+    }
+  }
+}

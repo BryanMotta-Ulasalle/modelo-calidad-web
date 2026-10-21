@@ -1,0 +1,22 @@
+{
+  "formato": "wave-extension-captura-v1",
+  "procedencia": "transcripcion_manual",
+  "nota": "Ejemplo totalmente simulado; no existe captura del Portal Académico",
+  "captura": {
+    "fechaHora": "2026-09-21T10:00:00-05:00",
+    "versionExtension": "ejemplo-controlado",
+    "url": "https://portal.ejemplo.edu/inicio",
+    "contexto": {"perfilAcceso": "simulado", "dispositivo": "escritorio", "navegador": "ejemplo-controlado"}
+  },
+  "resultados": [
+    {
+      "identificador": "contrast",
+      "valor": "3.1:1",
+      "ubicacion": "#menu-principal a:nth-child(2)",
+      "evidencia": {
+        "observacion": "Texto de contraste transcrito para demostrar el esquema; no es una medición real.",
+        "referenciaCaptura": "SIMULADA-001"
+      }
+    }
+  ]
+}

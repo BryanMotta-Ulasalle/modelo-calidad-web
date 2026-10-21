@@ -1,0 +1,17 @@
+{
+  "procedimiento": "scripts/capturar_axe_publico.cjs: playwright-core -> Chromium -> page.goto -> addScriptTag(axe.source) -> page.evaluate(axe.run)",
+  "urlSolicitada": "https://www.w3.org/WAI/demos/bad/before/home.html",
+  "urlFinal": "https://www.w3.org/WAI/demos/bad/before/home.html",
+  "httpStatus": 200,
+  "playwrightVersion": "1.63.0",
+  "axePackageVersion": "4.14.0",
+  "browserVersion": "153.0.8010.12",
+  "testEngine": {
+    "name": "axe-core",
+    "version": "4.14.0"
+  },
+  "testRunner": {
+    "name": "axe"
+  },
+  "sha256Fuente": "7c49c766e99aede2e56164cb97f29aec2b89ca08cdc7348012f1a53c66402b69"
+}

@@ -3,5 +3,4 @@
 from .dominio.resultado import ResultadoNormalizado
 
 __all__ = ["ResultadoNormalizado"]
-__version__ = "0.1.0"
-
+__version__ = "0.2.0"

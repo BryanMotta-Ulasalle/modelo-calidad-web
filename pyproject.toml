@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "modelo-calidad-web"
-version = "0.1.0"
+version = "0.2.0"
 description = "Prototipo de apoyo para el modelo de evaluación automatizada de calidad web."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -24,4 +24,3 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 modelo_calidad_web = ["catalogos/*.json"]
-

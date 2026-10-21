@@ -1,4 +1,4 @@
-# Entornos virtuales
+﻿# Entornos virtuales
 .venv/
 venv/
 env/
@@ -28,3 +28,13 @@ Thumbs.db
 # Archivos temporales
 *.log
 *.tmp
+
+# Documentos de trabajo locales de la tesis
+docs/
+INFORME_DIDACTICO_PRIMERA_VERSION.md
+*.tex
+*.pdf
+
+# Metadatos de instalacion y herramientas locales
+*.egg-info/
+.tools/

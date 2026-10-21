@@ -1,0 +1,29 @@
+{
+  "url": "https://portal.ejemplo.edu/inicio",
+  "timestamp": "2026-09-21T10:05:00-05:00",
+  "testEngine": {"name": "axe-core", "version": "ejemplo-controlado"},
+  "testRunner": {"name": "axe", "version": "ejemplo-controlado"},
+  "testEnvironment": {"userAgent": "ejemplo-controlado", "windowWidth": 1280, "windowHeight": 800},
+  "toolOptions": {"runOnly": {"type": "tag", "values": ["wcag2a", "wcag2aa"]}},
+  "passes": [],
+  "incomplete": [],
+  "inapplicable": [],
+  "violations": [
+    {
+      "id": "meta-viewport",
+      "impact": "serious",
+      "description": "Regla de ejemplo para la posibilidad de ampliación",
+      "help": "Viewport",
+      "helpUrl": "https://example.invalid/axe-rule",
+      "tags": ["wcag2aa"],
+      "nodes": [
+        {
+          "target": ["meta[name='viewport']"],
+          "html": "<meta name='viewport' content='user-scalable=no'>",
+          "failureSummary": "Evidencia simulada"
+        }
+      ]
+    }
+  ],
+  "notaControlada": "Objeto con las secciones de axe.run, creado manualmente para pruebas; no es salida real de Playwright"
+}

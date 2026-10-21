@@ -1,0 +1,12 @@
+{
+  "procedimiento": "scripts/capturar_wave_publico.cjs: Chromium persistente, extensión WAVE, serviceworker.func.runWave, lectura wave.results",
+  "urlSolicitada": "https://www.w3.org/WAI/demos/bad/before/home.html",
+  "urlFinal": "https://www.w3.org/WAI/demos/bad/before/home.html",
+  "httpStatus": 200,
+  "extensionId": "jbbplnpkjmmeebjpijfedlgcdilocofh",
+  "extensionVersion": "3.3.1.0",
+  "playwrightVersion": "1.63.0",
+  "browserVersion": "153.0.8010.12",
+  "capturadoEn": "2026-10-06T04:20:38.051Z",
+  "sha256Fuente": "9f501816b01916568ca1e3e21ebcb2475b335029be559e744ed4a3ce7ef1f599"
+}

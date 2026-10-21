@@ -1,0 +1,38 @@
+{
+  "formato": "wave-extension-captura-v1",
+  "procedencia": "transcripcion_manual",
+  "nota": "Transcripción humana de dos hallazgos observados en WAVE; no es una exportación automática ni representa los 82 iconos detectados.",
+  "captura": {
+    "fechaHora": "2026-10-06T04:20:38.051Z",
+    "versionExtension": "3.3.1.0",
+    "url": "https://www.w3.org/WAI/demos/bad/before/home.html",
+    "contexto": {
+      "perfilAcceso": "público, sin autenticación",
+      "dispositivo": "escritorio",
+      "navegador": "Chromium 153.0.8010.12",
+      "procedimiento": "Extensión WAVE instalada, activada en Chromium mediante su service worker"
+    }
+  },
+  "resultados": [
+    {
+      "identificador": "contrast",
+      "valor": "3.88:1",
+      "ubicacion": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[2]/TBODY[1]/TR[1]/TD[5]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/FONT[1]/B[1]",
+      "evidencia": {
+        "observacion": "Primer elemento de contrast: Very low contrast; relación 3.88, texto #41545d y fondo #a9b8bf según WAVE.",
+        "referenciaCaptura": "wave_extension_pantalla.png",
+        "detalleFuente": "wave_extension_raw.json#/categories/contrast/items/contrast/contrastdata/0"
+      }
+    },
+    {
+      "identificador": "alt_missing",
+      "valor": "Missing alternative text",
+      "ubicacion": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/IMG[1]",
+      "evidencia": {
+        "observacion": "Primer elemento de alt_missing; el panel WAVE mostró 19 imágenes con texto alternativo ausente.",
+        "referenciaCaptura": "wave_extension_pantalla.png",
+        "detalleFuente": "wave_extension_raw.json#/categories/error/items/alt_missing/xpaths/0"
+      }
+    }
+  ]
+}

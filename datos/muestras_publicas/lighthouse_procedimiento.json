@@ -1,0 +1,18 @@
+{
+  "procedimiento": "scripts/capturar_lighthouse_publico.cjs: CLI Lighthouse con Chrome headless y solo categoría performance",
+  "urlSolicitada": "https://www.w3.org/WAI/demos/bad/before/home.html",
+  "urlFinal": "https://www.w3.org/WAI/demos/bad/before/home.html",
+  "lighthouseVersion": "13.5.0",
+  "chromePathTipo": "CHROME_PATH provisto por el operador",
+  "versionPaquete": "13.5.0",
+  "comandoArgumentos": [
+    "https://www.w3.org/WAI/demos/bad/before/home.html",
+    "--output=json",
+    "--output-path=<archivo-salida>",
+    "--only-categories=performance",
+    "--chrome-flags=--headless=new --no-first-run --disable-gpu",
+    "--quiet"
+  ],
+  "codigoSalida": 0,
+  "sha256Fuente": "d475a845e17954238208a34d18d33331c6062c7b7bb55d3e479e996081ccfc56"
+}
