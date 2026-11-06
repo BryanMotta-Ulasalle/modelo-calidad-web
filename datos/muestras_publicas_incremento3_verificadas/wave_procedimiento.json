@@ -1,0 +1,14 @@
+{
+  "procedimiento": "Captura estructurada asistida desde evidencia preexistente; no ejecucion nueva de la extension. No hay ARIA en la muestra conservada.",
+  "urlFinal": "https://www.w3.org/WAI/demos/bad/before/home.html",
+  "fechaCapturaOriginal": "2026-10-06T04:20:38.051Z",
+  "sha256Fuente": "487b4280bcb9820d83ff22a288c2325320f3ed75180055ca5baf699877737e26",
+  "sha256ArchivoInternoOriginal": "9f501816b01916568ca1e3e21ebcb2475b335029be559e744ed4a3ce7ef1f599",
+  "categoriasIncluidas": [
+    "contrast",
+    "error",
+    "alert",
+    "feature",
+    "structure"
+  ]
+}

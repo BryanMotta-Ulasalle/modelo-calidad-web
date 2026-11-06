@@ -1,0 +1,289 @@
+{
+  "version": "2.0.0",
+  "mapeos": {
+    "wave-extension-captura-v1": {
+      "contrast": {
+        "indicador": "A-04",
+        "dimension": "D-AC",
+        "referencias": [
+          "WCAG 2.2 - 1.4.3"
+        ]
+      },
+      "alt_missing": {
+        "indicador": "A-01",
+        "dimension": "D-AC",
+        "referencias": [
+          "WCAG 2.2 - 1.1.1"
+        ]
+      }
+    },
+    "axe-core-playwright": {
+      "meta-viewport": {
+        "indicador": "U-02",
+        "dimension": "D-US",
+        "referencias": [
+          "axe rule: meta-viewport"
+        ]
+      },
+      "color-contrast": {
+        "indicador": "A-04",
+        "dimension": "D-AC",
+        "referencias": [
+          "WCAG 2.2 - 1.4.3"
+        ]
+      },
+      "html-has-lang": {
+        "indicador": "A-06",
+        "dimension": "D-AC",
+        "referencias": [
+          "axe rule: html-has-lang",
+          "WCAG 2.2 - 3.1.1"
+        ]
+      },
+      "image-alt": {
+        "indicador": "A-01",
+        "dimension": "D-AC",
+        "referencias": [
+          "axe rule: image-alt",
+          "WCAG 2.2 - 1.1.1"
+        ]
+      },
+      "landmark-one-main": {
+        "indicador": "A-02",
+        "dimension": "D-AC",
+        "referencias": [
+          "axe rule: landmark-one-main"
+        ]
+      },
+      "link-name": {
+        "indicador": "A-07",
+        "dimension": "D-AC",
+        "referencias": [
+          "axe rule: link-name",
+          "WCAG 2.2 - 2.4.4"
+        ]
+      },
+      "region": {
+        "indicador": "A-02",
+        "dimension": "D-AC",
+        "referencias": [
+          "axe rule: region"
+        ]
+      },
+      "select-name": {
+        "indicador": "A-03",
+        "dimension": "D-AC",
+        "referencias": [
+          "axe rule: select-name",
+          "WCAG 2.2 - 4.1.2"
+        ]
+      },
+      "document-title": {
+        "indicador": "A-05",
+        "dimension": "D-AC",
+        "referencias": [
+          "axe 4.14: document-title",
+          "WCAG 2.2 - 2.4.2"
+        ]
+      },
+      "aria-valid-attr": {
+        "indicador": "A-08",
+        "dimension": "D-AC",
+        "referencias": [
+          "axe 4.14: aria-valid-attr",
+          "WCAG 2.2 - 4.1.2"
+        ]
+      },
+      "aria-valid-attr-value": {
+        "indicador": "A-08",
+        "dimension": "D-AC",
+        "referencias": [
+          "axe 4.14: aria-valid-attr-value",
+          "WCAG 2.2 - 4.1.2"
+        ]
+      },
+      "frame-focusable-content": {
+        "indicador": "A-09",
+        "dimension": "D-AC",
+        "referencias": [
+          "axe 4.14: frame-focusable-content",
+          "WCAG 2.2 - 2.1.1"
+        ]
+      },
+      "target-size": {
+        "indicador": "U-03",
+        "dimension": "D-US",
+        "referencias": [
+          "axe 4.14: target-size",
+          "WCAG 2.2 - 2.5.8"
+        ]
+      }
+    },
+    "lighthouse-result": {
+      "first-contentful-paint": {
+        "indicador": "P-01",
+        "dimension": "D-RE",
+        "referencias": [
+          "Lighthouse: first-contentful-paint"
+        ],
+        "unidadOrigen": "millisecond",
+        "unidadesOrigen": [
+          "millisecond",
+          "ms",
+          "second",
+          "s"
+        ]
+      },
+      "largest-contentful-paint": {
+        "indicador": "P-02",
+        "dimension": "D-RE",
+        "referencias": [
+          "Lighthouse: largest-contentful-paint"
+        ],
+        "unidadOrigen": "millisecond",
+        "unidadesOrigen": [
+          "millisecond",
+          "ms",
+          "second",
+          "s"
+        ]
+      },
+      "total-blocking-time": {
+        "indicador": "P-03",
+        "dimension": "D-RE",
+        "referencias": [
+          "Lighthouse: total-blocking-time"
+        ],
+        "unidadOrigen": "millisecond",
+        "unidadesOrigen": [
+          "millisecond",
+          "ms",
+          "second",
+          "s"
+        ]
+      },
+      "cumulative-layout-shift": {
+        "indicador": "P-04",
+        "dimension": "D-RE",
+        "referencias": [
+          "Lighthouse: cumulative-layout-shift"
+        ],
+        "unidadOrigen": "unitless"
+      },
+      "speed-index": {
+        "indicador": "P-05",
+        "dimension": "D-RE",
+        "referencias": [
+          "Lighthouse: speed-index"
+        ],
+        "unidadOrigen": "millisecond",
+        "unidadesOrigen": [
+          "millisecond",
+          "ms",
+          "second",
+          "s"
+        ]
+      },
+      "viewport": {
+        "indicador": "U-01",
+        "dimension": "D-US",
+        "referencias": [
+          "Lighthouse: viewport",
+          "Modelo: cuadro 5.9"
+        ],
+        "versionesAdmitidas": [
+          "12.8.2"
+        ],
+        "modosAdmitidos": [
+          "metricSavings",
+          "binary"
+        ]
+      },
+      "paste-preventing-inputs": {
+        "indicador": "U-04",
+        "dimension": "D-US",
+        "referencias": [
+          "Lighthouse: paste-preventing-inputs",
+          "Modelo: cuadro 5.9"
+        ],
+        "versionesAdmitidas": [
+          "12.8.2",
+          "13.5.0"
+        ],
+        "modosAdmitidos": [
+          "binary"
+        ]
+      },
+      "errors-in-console": {
+        "indicador": "U-05",
+        "dimension": "D-US",
+        "referencias": [
+          "Lighthouse: errors-in-console",
+          "Modelo: cuadro 5.9"
+        ],
+        "versionesAdmitidas": [
+          "12.8.2",
+          "13.5.0"
+        ],
+        "modosAdmitidos": [
+          "binary"
+        ]
+      }
+    },
+    "wave-extension-captura-v2": {
+      "contrast": {
+        "indicador": "A-04",
+        "dimension": "D-AC",
+        "referencias": [
+          "WCAG 2.2 - 1.4.3"
+        ],
+        "categoria": "contrast"
+      },
+      "alt_missing": {
+        "indicador": "A-01",
+        "dimension": "D-AC",
+        "referencias": [
+          "WCAG 2.2 - 1.1.1"
+        ],
+        "categoria": "error"
+      },
+      "alt_suspicious": {
+        "indicador": "A-01",
+        "dimension": "D-AC",
+        "referencias": [
+          "WAVE: alt_suspicious",
+          "https://wave.webaim.org/api/docs?format=html"
+        ],
+        "categoria": "alert"
+      },
+      "alt": {
+        "indicador": "A-01",
+        "dimension": "D-AC",
+        "referencias": [
+          "WAVE: alt",
+          "https://wave.webaim.org/api/docs?format=html"
+        ],
+        "categoria": "feature"
+      },
+      "h1": {
+        "indicador": "A-02",
+        "dimension": "D-AC",
+        "referencias": [
+          "WAVE: h1",
+          "https://wave.webaim.org/api/docs?format=html"
+        ],
+        "categoria": "structure"
+      },
+      "aria": {
+        "indicador": "A-08",
+        "dimension": "D-AC",
+        "referencias": [
+          "WAVE: aria",
+          "https://wave.webaim.org/api/docs?format=html"
+        ],
+        "categoria": "aria"
+      }
+    }
+  },
+  "descripcion": "Ampliacion explicita para incremento 3; las correspondencias 1.1.0 se conservan aparte."
+}

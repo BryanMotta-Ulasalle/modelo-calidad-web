@@ -38,3 +38,13 @@ INFORME_DIDACTICO_PRIMERA_VERSION.md
 # Metadatos de instalacion y herramientas locales
 *.egg-info/
 .tools/
+
+# Empaquetado local generado por pip wheel / setuptools
+build/
+dist/
+
+# Salidas locales de la CLI y capturas repetidas
+salidas/
+
+# Intento de captura conservado localmente: HTTP principal no comprobado en Lighthouse 12
+datos/muestras_publicas_incremento3/

@@ -1,0 +1,4 @@
+# La trazabilidad SHA-256 necesita conservar los bytes de las muestras.
+# Evita que core.autocrlf cambie los archivos en otro equipo.
+datos/muestras_publicas/** -text
+datos/muestras_publicas_incremento3_verificadas/** -text

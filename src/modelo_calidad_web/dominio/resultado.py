@@ -1,4 +1,5 @@
 from datetime import datetime
+import math
 from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -53,16 +54,23 @@ class ResultadoNormalizado(BaseModel):
             raise ValueError("idResultado no puede estar vacío")
         return value
 
-    @field_validator("unidad")
+    @field_validator("valor_original", mode="before")
     @classmethod
-    def validar_unidad_de_metrica(cls, value: str | None, info):
+    def validar_valor_de_metrica(cls, value, info):
+        if isinstance(value, float) and not math.isfinite(value):
+            raise ValueError("valorOriginal debe ser finito")
         tipo = info.data.get("tipo_resultado")
-        if tipo == TipoResultado.METRICA and not value:
-            raise ValueError("unidad es obligatoria para resultados de tipo metrica")
+        if tipo == TipoResultado.METRICA:
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
+                raise ValueError("una metrica requiere un número, no un booleano ni texto")
+            if value < 0:
+                raise ValueError("una metrica no puede ser negativa")
         return value
 
     @model_validator(mode="after")
     def validar_evidencia_de_hallazgos(self):
+        if self.tipo_resultado == TipoResultado.METRICA and not self.unidad:
+            raise ValueError("unidad es obligatoria para resultados de tipo metrica")
         if self.tipo_resultado in {TipoResultado.HALLAZGO, TipoResultado.ALERTA}:
             if self.evidencia in (None, "", [], {}):
                 raise ValueError(

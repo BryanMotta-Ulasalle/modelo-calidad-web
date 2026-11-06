@@ -1,0 +1,31 @@
+{
+  "procedimiento": "scripts/capturar_incremento_3.cjs: Chrome por Playwright -> axe.run; runOnly explícito de IDs mapeados",
+  "urlSolicitada": "https://example.com/",
+  "urlFinal": "https://example.com/",
+  "httpStatus": 200,
+  "playwrightVersion": "1.63.0",
+  "browserVersion": "156.0.8078.79",
+  "testEngine": {
+    "name": "axe-core",
+    "version": "4.14.0"
+  },
+  "testRunner": {
+    "name": "axe"
+  },
+  "reglasSolicitadas": [
+    "meta-viewport",
+    "color-contrast",
+    "html-has-lang",
+    "image-alt",
+    "landmark-one-main",
+    "link-name",
+    "region",
+    "select-name",
+    "document-title",
+    "aria-valid-attr",
+    "aria-valid-attr-value",
+    "frame-focusable-content",
+    "target-size"
+  ],
+  "sha256Fuente": "9b724ba706c27313291bf069dfeda7d82c5d0b67a9f0e76fb2bc0e2aad858bfe"
+}

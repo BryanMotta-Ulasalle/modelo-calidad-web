@@ -1,0 +1,19 @@
+{
+  "procedimiento": "scripts/capturar_incremento_3.cjs: Lighthouse CLI con auditorías explícitas; versión fijada por alias local",
+  "urlSolicitada": "https://example.com/",
+  "urlFinal": "https://example.com/",
+  "lighthouseVersion": "13.5.0",
+  "argumentos": [
+    "https://example.com/",
+    "--output=json",
+    "--output-path=<salida>",
+    "--only-audits=first-contentful-paint,largest-contentful-paint,total-blocking-time,cumulative-layout-shift,speed-index,paste-preventing-inputs,errors-in-console,http-status-code,document-title",
+    "--chrome-flags=--headless=new --no-first-run --disable-gpu",
+    "--quiet"
+  ],
+  "fechaCaptura": "2026-10-30T02:23:24.823Z",
+  "codigoSalida": 0,
+  "sha256Fuente": "96bb0fdadd5d00c320461fb74447c2e98d5ec5cc784d67e872ef2835fd288f50",
+  "estadoHttpObservado": 1,
+  "documentoTitulo": 1
+}

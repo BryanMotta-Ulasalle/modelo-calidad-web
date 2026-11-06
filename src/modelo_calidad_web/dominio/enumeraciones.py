@@ -4,6 +4,7 @@ from enum import StrEnum
 class Herramienta(StrEnum):
     WAVE = "WAVE"
     AXE = "axe DevTools"
+    AXE_CORE = "axe-core"
     LIGHTHOUSE = "Lighthouse"
 
 

@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "versionReglas": "1.0.0",
+  "cambioRespectoBorrador": "WAVE alt_missing y contrast pasan de prioridad pendiente a alta por decision operativa explicita del modelo; no es severidad oficial WAVE.",
+  "naturaleza": "Expectativas de comprobacion escritas desde las reglas documentadas y las fuentes conservadas; no generadas por el clasificador. No son datos del Portal Academico ni una validacion externa del modelo.",
+  "muestras": {
+    "wave": [
+      {"id": "contrast", "grupo": "transcrito", "estado": "desfavorable", "prioridad": "alta"},
+      {"id": "alt_missing", "grupo": "transcrito", "estado": "desfavorable", "prioridad": "alta"}
+    ],
+    "axe": [
+      {"id": "color-contrast", "grupo": "violations", "estado": "desfavorable", "prioridad": "alta"},
+      {"id": "html-has-lang", "grupo": "violations", "estado": "desfavorable", "prioridad": "alta"},
+      {"id": "image-alt", "grupo": "violations", "estado": "desfavorable", "prioridad": "critica"},
+      {"id": "landmark-one-main", "grupo": "violations", "estado": "desfavorable", "prioridad": "media"},
+      {"id": "link-name", "grupo": "violations", "estado": "desfavorable", "prioridad": "alta"},
+      {"id": "region", "grupo": "violations", "estado": "desfavorable", "prioridad": "media"},
+      {"id": "select-name", "grupo": "violations", "estado": "desfavorable", "prioridad": "critica"},
+      {"id": "color-contrast", "grupo": "incomplete", "estado": "requiere_revision", "prioridad": "revision"},
+      {"id": "color-contrast", "grupo": "passes", "estado": "favorable", "prioridad": null},
+      {"id": "image-alt", "grupo": "passes", "estado": "favorable", "prioridad": null},
+      {"id": "link-name", "grupo": "passes", "estado": "favorable", "prioridad": null},
+      {"id": "region", "grupo": "passes", "estado": "favorable", "prioridad": null},
+      {"id": "meta-viewport", "grupo": "inapplicable", "estado": "no_evaluado", "prioridad": null}
+    ],
+    "lighthouse": [
+      {"id": "first-contentful-paint", "grupo": "numericValue", "estado": "favorable", "prioridad": null},
+      {"id": "largest-contentful-paint", "grupo": "numericValue", "estado": "favorable", "prioridad": null},
+      {"id": "total-blocking-time", "grupo": "numericValue", "estado": "favorable", "prioridad": null},
+      {"id": "cumulative-layout-shift", "grupo": "numericValue", "estado": "favorable", "prioridad": null},
+      {"id": "speed-index", "grupo": "numericValue", "estado": "favorable", "prioridad": null}
+    ]
+  }
+}

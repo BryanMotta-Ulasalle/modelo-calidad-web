@@ -48,6 +48,21 @@ class ResultadoNormalizadoTest(unittest.TestCase):
         with self.assertRaises(ValidationError):
             ResultadoNormalizado.model_validate(datos)
 
+    def test_rechaza_metrica_con_unidad_omitida(self):
+        datos = json.loads((RAIZ / "datos/ejemplos/lighthouse_ejemplo.json").read_text(encoding="utf-8"))
+        del datos["unidad"]
+        with self.assertRaises(ValidationError):
+            ResultadoNormalizado.model_validate(datos)
+
+    def test_rechaza_metricas_invalidas_sin_convertir_textos_o_booleanos(self):
+        base = json.loads((RAIZ / "datos/ejemplos/lighthouse_ejemplo.json").read_text(encoding="utf-8"))
+        for valor in (float("nan"), float("inf"), float("-inf"), True, False, -1, "3.2"):
+            with self.subTest(valor=valor):
+                datos = copy.deepcopy(base)
+                datos["valorOriginal"] = valor
+                with self.assertRaises(ValidationError):
+                    ResultadoNormalizado.model_validate(datos)
+
 
 if __name__ == "__main__":
     unittest.main()

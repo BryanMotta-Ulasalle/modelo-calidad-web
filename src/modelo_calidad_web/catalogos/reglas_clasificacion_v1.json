@@ -1,0 +1,151 @@
+{
+  "version": "1.0.0",
+  "estado": "operativa",
+  "versionCatalogoMapeos": "2.0.0",
+  "referenciaDiseno": "Especificacion del modelo, capitulo 5, cuadros 5.6 y 5.8; decisiones operativas D-01 a D-06",
+  "decisionOperativa": {
+    "D-01": "Prioridad tecnica alta para alt_missing y contrast por barrera automatizada de acceso; decision del modelo, no severidad oficial WAVE. No se infiere criticidad institucional.",
+    "D-02": "P-06 contextual, sin clasificacion ni agregacion",
+    "D-03": "incomplete: revision; violation sin impacto reconocido: prioridad null",
+    "D-04": "Umbrales moviles para P-01/02/03/05; CLS independiente del perfil",
+    "D-05": "Lote procesado separado con origen integro y valor original nullable",
+    "D-06": "Perfil explicito incremento-3 con mapeos 2.0.0; versiones Lighthouse acotadas y cobertura separada de hallazgos."
+  },
+  "metricas": {
+    "first-contentful-paint": {
+      "regla": "RE-01",
+      "indicador": "P-01",
+      "perfil": "mobile",
+      "unidad": "ms",
+      "favorableMax": 1800,
+      "intermedioMax": 3000,
+      "fuente": "https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint"
+    },
+    "largest-contentful-paint": {
+      "regla": "RE-02",
+      "indicador": "P-02",
+      "perfil": "mobile",
+      "unidad": "ms",
+      "favorableMax": 2500,
+      "intermedioMax": 4000,
+      "fuente": "https://web.dev/articles/lcp"
+    },
+    "total-blocking-time": {
+      "regla": "RE-03",
+      "indicador": "P-03",
+      "perfil": "mobile",
+      "unidad": "ms",
+      "favorableMax": 200,
+      "intermedioMax": 600,
+      "fuente": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time"
+    },
+    "cumulative-layout-shift": {
+      "regla": "RE-04",
+      "indicador": "P-04",
+      "perfil": null,
+      "unidad": "unitless",
+      "favorableMax": 0.1,
+      "intermedioMax": 0.25,
+      "fuente": "https://web.dev/articles/cls"
+    },
+    "speed-index": {
+      "regla": "RE-05",
+      "indicador": "P-05",
+      "perfil": "mobile",
+      "unidad": "ms",
+      "favorableMax": 3400,
+      "intermedioMax": 5800,
+      "fuente": "https://developer.chrome.com/docs/lighthouse/performance/speed-index"
+    }
+  },
+  "conversionTiempo": {
+    "millisecond": 1,
+    "ms": 1,
+    "second": 1000,
+    "s": 1000
+  },
+  "prioridadAxe": {
+    "critical": "critica",
+    "serious": "alta",
+    "moderate": "media",
+    "minor": "baja"
+  },
+  "gruposAxe": {
+    "violations": {
+      "regla": "AC-04",
+      "estado": "desfavorable"
+    },
+    "incomplete": {
+      "regla": "AC-05",
+      "estado": "requiere_revision"
+    },
+    "passes": {
+      "regla": "AC-06",
+      "estado": "favorable"
+    },
+    "inapplicable": {
+      "regla": "AC-07",
+      "estado": "no_evaluado"
+    }
+  },
+  "categoriasWave": {
+    "alt_missing": "error",
+    "contrast": "contrast",
+    "alt_suspicious": "alert",
+    "alt": "feature",
+    "h1": "structure",
+    "aria": "aria"
+  },
+  "referenciasAxe": [
+    "Modelo: cuadro 5.6 y RN-05/06/08/09",
+    "https://github.com/dequelabs/axe-core/blob/v4.14.0/doc/API.md"
+  ],
+  "referenciasWave": [
+    "Modelo: cuadro 5.6 y D-01",
+    "https://wave.webaim.org/help"
+  ],
+  "versionesLoteAdmitidas": {
+    "0.2.0": "1.1.0",
+    "0.3.0": "2.0.0"
+  },
+  "prioridadWave": {
+    "alt_missing": {
+      "prioridad": "alta",
+      "fundamento": "Ausencia de alternativa textual detectada: barrera de acceso no textual, WCAG 1.1.1. Alta es una convencion operativa del modelo para revisar/corregir esta barrera, sin afirmar su contexto semantico completo.",
+      "fuente": "https://wave.webaim.org/api/docs?format=html#alt_missing"
+    },
+    "contrast": {
+      "prioridad": "alta",
+      "fundamento": "Contraste insuficiente detectado: barrera para lectura visual, WCAG 1.4.3. Alta es una convencion operativa del modelo; no se recalcula desde la cadena de contraste ni se infiere afectacion individual.",
+      "fuente": "https://wave.webaim.org/api/docs?format=html#contrast"
+    }
+  },
+  "auditoriasTecnicas": {
+    "viewport": {
+      "regla": "US-01",
+      "indicador": "U-01",
+      "versionesAdmitidas": [
+        "12.8.2"
+      ],
+      "fuente": "https://github.com/GoogleChrome/lighthouse/blob/v12.8.2/core/audits/viewport.js"
+    },
+    "paste-preventing-inputs": {
+      "regla": "US-04",
+      "indicador": "U-04",
+      "versionesAdmitidas": [
+        "12.8.2",
+        "13.5.0"
+      ],
+      "fuente": "https://github.com/GoogleChrome/lighthouse/blob/v13.5.0/core/audits/dobetterweb/paste-preventing-inputs.js"
+    },
+    "errors-in-console": {
+      "regla": "US-05",
+      "indicador": "U-05",
+      "versionesAdmitidas": [
+        "12.8.2",
+        "13.5.0"
+      ],
+      "fuente": "https://github.com/GoogleChrome/lighthouse/blob/v13.5.0/core/audits/errors-in-console.js"
+    }
+  }
+}

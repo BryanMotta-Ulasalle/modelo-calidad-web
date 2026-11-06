@@ -1,0 +1,77 @@
+{
+  "formato": "wave-extension-captura-v2",
+  "procedencia": "captura_documentada_asistida",
+  "nota": "Transcripción humana de dos hallazgos observados en WAVE; no es una exportación automática ni representa los 82 iconos detectados.",
+  "captura": {
+    "fechaHora": "2026-10-06T04:20:38.051Z",
+    "versionExtension": "3.3.1.0",
+    "url": "https://www.w3.org/WAI/demos/bad/before/home.html",
+    "contexto": {
+      "perfilAcceso": "público, sin autenticación",
+      "dispositivo": "escritorio",
+      "navegador": "Chromium 153.0.8010.12",
+      "procedimiento": "Extensión WAVE instalada, activada en Chromium mediante su service worker",
+      "metodoTranscripcion": "Reestructuracion asistida por Codex desde evidencia WAVE conservada del 6 de octubre; no nueva ejecucion ni exportacion JSON nativa."
+    }
+  },
+  "resultados": [
+    {
+      "identificador": "contrast",
+      "valor": "3.88:1",
+      "ubicacion": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[2]/TBODY[1]/TR[1]/TD[5]/TABLE[1]/TBODY[1]/TR[2]/TD[1]/FONT[1]/B[1]",
+      "evidencia": {
+        "observacion": "Primer elemento de contrast: Very low contrast; relación 3.88, texto #41545d y fondo #a9b8bf según WAVE.",
+        "referenciaCaptura": "../muestras_publicas/wave_extension_pantalla.png",
+        "detalleFuente": "wave_extension_raw.json#/categories/contrast/items/contrast/contrastdata/0"
+      },
+      "categoria": "contrast"
+    },
+    {
+      "identificador": "alt_missing",
+      "valor": "Missing alternative text",
+      "ubicacion": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/IMG[1]",
+      "evidencia": {
+        "observacion": "Primer elemento de alt_missing; el panel WAVE mostró 19 imágenes con texto alternativo ausente.",
+        "referenciaCaptura": "../muestras_publicas/wave_extension_pantalla.png",
+        "detalleFuente": "wave_extension_raw.json#/categories/error/items/alt_missing/xpaths/0"
+      },
+      "categoria": "error"
+    },
+    {
+      "identificador": "alt_suspicious",
+      "categoria": "alert",
+      "valor": "Suspicious alternative text",
+      "ubicacion": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[2]/TBODY[1]/TR[1]/TD[3]/DIV[1]/P[2]/SPAN[1]/IMG[1]",
+      "evidencia": {
+        "observacion": "Categoria e identificador cotejados con el archivo interno WAVE conservado; la presencia contextual no es juicio de calidad.",
+        "referenciaCaptura": "../muestras_publicas/wave_extension_pantalla.png",
+        "archivoInterno": "../muestras_publicas/wave_extension_raw.json",
+        "rutaFuente": "/categories/alert/items/alt_suspicious/xpaths/0"
+      }
+    },
+    {
+      "identificador": "alt",
+      "categoria": "feature",
+      "valor": "Alternative text",
+      "ubicacion": "/HTML/BODY[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/TABLE[1]/TBODY[1]/TR[2]/TD[2]/TABLE[2]/TBODY[1]/TR[1]/TD[3]/DIV[1]/P[2]/IMG[1]",
+      "evidencia": {
+        "observacion": "Categoria e identificador cotejados con el archivo interno WAVE conservado; la presencia contextual no es juicio de calidad.",
+        "referenciaCaptura": "../muestras_publicas/wave_extension_pantalla.png",
+        "archivoInterno": "../muestras_publicas/wave_extension_raw.json",
+        "rutaFuente": "/categories/feature/items/alt/xpaths/0"
+      }
+    },
+    {
+      "identificador": "h1",
+      "categoria": "structure",
+      "valor": "Heading level 1",
+      "ubicacion": "/HTML/BODY[1]/DIV[2]/H1[1]",
+      "evidencia": {
+        "observacion": "Categoria e identificador cotejados con el archivo interno WAVE conservado; la presencia contextual no es juicio de calidad.",
+        "referenciaCaptura": "../muestras_publicas/wave_extension_pantalla.png",
+        "archivoInterno": "../muestras_publicas/wave_extension_raw.json",
+        "rutaFuente": "/categories/structure/items/h1/xpaths/0"
+      }
+    }
+  ]
+}
