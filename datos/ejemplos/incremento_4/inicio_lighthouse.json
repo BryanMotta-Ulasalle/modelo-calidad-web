@@ -1,0 +1,94 @@
+{
+  "lighthouseVersion": "ejemplo-controlado",
+  "fetchTime": "2026-11-04T10:02:00-05:00",
+  "requestedUrl": "https://simulado.invalid/inicio",
+  "finalDisplayedUrl": "https://simulado.invalid/inicio",
+  "userAgent": "ejemplo-controlado",
+  "gatherMode": "navigation",
+  "configSettings": {
+    "formFactor": "mobile",
+    "screenEmulation": {
+      "mobile": true
+    }
+  },
+  "environment": {
+    "networkUserAgent": "ejemplo-controlado"
+  },
+  "runWarnings": [],
+  "categories": {
+    "performance": {
+      "id": "performance",
+      "score": 0.72,
+      "auditRefs": [
+        {
+          "id": "first-contentful-paint",
+          "weight": 1,
+          "group": "metrics"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "weight": 1,
+          "group": "metrics"
+        },
+        {
+          "id": "total-blocking-time",
+          "weight": 1,
+          "group": "metrics"
+        },
+        {
+          "id": "cumulative-layout-shift",
+          "weight": 1,
+          "group": "metrics"
+        },
+        {
+          "id": "speed-index",
+          "weight": 1,
+          "group": "metrics"
+        }
+      ]
+    }
+  },
+  "audits": {
+    "first-contentful-paint": {
+      "id": "first-contentful-paint",
+      "title": "first-contentful-paint",
+      "numericValue": 1800,
+      "numericUnit": "millisecond",
+      "score": 0.5,
+      "scoreDisplayMode": "numeric"
+    },
+    "largest-contentful-paint": {
+      "id": "largest-contentful-paint",
+      "title": "largest-contentful-paint",
+      "numericValue": 3200,
+      "numericUnit": "millisecond",
+      "score": 0.5,
+      "scoreDisplayMode": "numeric"
+    },
+    "total-blocking-time": {
+      "id": "total-blocking-time",
+      "title": "total-blocking-time",
+      "numericValue": 650,
+      "numericUnit": "millisecond",
+      "score": 0.5,
+      "scoreDisplayMode": "numeric"
+    },
+    "cumulative-layout-shift": {
+      "id": "cumulative-layout-shift",
+      "title": "cumulative-layout-shift",
+      "numericValue": 0.1,
+      "numericUnit": "unitless",
+      "score": 0.5,
+      "scoreDisplayMode": "numeric"
+    },
+    "speed-index": {
+      "id": "speed-index",
+      "title": "speed-index",
+      "numericValue": 3400,
+      "numericUnit": "millisecond",
+      "score": 0.5,
+      "scoreDisplayMode": "numeric"
+    }
+  },
+  "notaControlada": "LHR de prueba construido manualmente; no es un reporte de Lighthouse sobre el portal"
+}

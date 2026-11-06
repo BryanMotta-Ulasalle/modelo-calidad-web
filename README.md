@@ -1,6 +1,6 @@
 # Modelo de evaluación automatizada de calidad web
 
-Prototipo de apoyo **0.3.0**. Conserva la validación y la importación anteriores e implementa la clasificación del tercer incremento de la tesis:
+Prototipo de apoyo **0.4.1**. Conserva los contratos anteriores y añade integración por vista y dimensión, coincidencias documentadas, recomendaciones e informe del cuarto incremento de la tesis:
 
 > Desarrollo de un modelo de evaluación automatizada de calidad web para el Portal Académico de la Universidad La Salle - Arequipa.
 
@@ -107,17 +107,11 @@ La base del incremento 0.1.0 incluye:
 - Validación de coherencia entre indicador y dimensión.
 - Ejemplos controlados de las tres herramientas.
 
-El incremento 0.2.0 añade la importación a la etapa intermedia descrita arriba y las pruebas con muestras de una página pública. El tercer incremento añade clasificación para la cobertura delimitada a continuación. Todavía no incluye:
-
-- Integración por dimensión o módulo.
-- Generación del diagnóstico final.
-- Ejecuciones sobre el Portal Académico.
-
-Esas capacidades corresponden a los siguientes incrementos. El prototipo no hace una evaluación completa de usabilidad, no certifica conformidad WCAG y no produce un puntaje global único.
+El incremento 0.2.0 añade la importación intermedia y las pruebas con muestras públicas. El tercero añade clasificación para la cobertura delimitada más abajo. El cuarto integra lotes mediante un manifiesto explícito y produce diagnóstico JSON e informe Markdown. La aplicación sobre el Portal Académico y la evaluación DSR del modelo siguen pendientes. El prototipo no hace una evaluación completa de usabilidad, no certifica conformidad WCAG y no produce un puntaje global único.
 
 ## Tercer incremento 0.3.0: clasificación y revisión documentada
 
-Implementado y comprobado localmente. La versión del paquete, el motor y el esquema procesado son `0.3.0`; las reglas operativas son `1.0.0`. Esto no representa publicación remota, evaluación DSR concluida ni resultados del Portal Académico. El modelo es el aporte principal: el prototipo aplica sus decisiones y conserva la evidencia.
+Implementado y comprobado localmente en el cierre 0.3.0. El motor y el esquema clasificado se conservan en `0.3.0` dentro del paquete actual; las reglas operativas de clasificación son `1.0.0`. Esto no representa publicación remota, evaluación DSR concluida ni resultados del Portal Académico. El modelo es el aporte principal: el prototipo aplica sus decisiones y conserva la evidencia.
 
 ### Importación compatible y perfil ampliado
 
@@ -149,7 +143,7 @@ El catálogo ampliado relaciona 19 indicadores con fuentes concretas; P-06 se tr
 
 El procesador conserva originales, valores normalizados, regla y versión, condiciones, motivos y hashes de fuente, archivo intermedio, reglas y mapeos. `coberturaIndicadores` registra los 20 indicadores con su situación en ese formato, sin inventar hallazgos para los ausentes. Los IDs no mapeados de passes/inapplicable se registran en un inventario separado, sin clasificarlos; los candidatos desconocidos de violations/incomplete continúan produciendo `SIN_MAPEO`.
 
-El catálogo descriptivo de diez reglas RN se conserva. RN-07, la consolidación entre herramientas, integración, recomendaciones y diagnóstico final corresponden al siguiente incremento. El resultado de clasificación no es un puntaje global.
+El catálogo descriptivo de diez reglas RN se conserva. RN-07, la integración, las recomendaciones y el diagnóstico se implementan en la etapa separada del cuarto incremento, descrita al final. El resultado de `clasificar` sigue sin consolidar y no es un puntaje global.
 
 ### Revisión humana
 
@@ -180,3 +174,107 @@ node scripts/capturar_incremento_3.cjs
 La captura se limita a las dos páginas públicas declaradas en el script y conserva fuentes y manifiestos. Los hashes comprueban contenido y coherencia; por sí solos no acreditan autoría o ejecución auténtica. Una nueva captura puede cambiar los valores y hallazgos.
 
 Las pruebas incluyen fronteras numéricas, conversiones completas, categorías WAVE, estados axe, auditorías técnicas, versiones, ausencia de datos, integridad, revisión simulada y archivos sin sobrescritura. Las expectativas fueron preparadas durante el desarrollo; no equivalen a validación independiente por expertos. La evaluación DSR del modelo y su aplicación institucional requieren su procedimiento y evidencia propios.
+
+## Cuarto incremento 0.4.0: integración y diagnóstico
+
+El modelo integra de forma estructural: caso → vista → grupo de observación → dimensión → indicador → observación. No combina dimensiones en una nota. El paquete/integrador y el diagnóstico actuales usan 0.4.1; el clasificador y sus lotes mantienen 0.3.0; las reglas de integración son 1.1.0 y las de clasificación 1.0.0, con versiones independientes.
+
+### Recorrido con datos simulados
+
+Desde la raíz, en una carpeta de salida **nueva**:
+
+~~~powershell
+.\.venv\Scripts\python.exe -B scripts/preparar_ejemplo_incremento_4.py --salida salidas/ejemplo_incremento4
+.\.venv\Scripts\python.exe -B -m modelo_calidad_web diagnosticar salidas/ejemplo_incremento4/manifiesto.json --salida salidas/ejemplo_incremento4/diagnostico.json
+.\.venv\Scripts\python.exe -B -m modelo_calidad_web informe salidas/ejemplo_incremento4/diagnostico.json --salida salidas/ejemplo_incremento4/informe.md
+~~~
+
+El primer comando **no captura páginas**: utiliza seis archivos controlados de datos/ejemplos/incremento_4/ para preparar dos vistas simuladas, sus lotes clasificados y un manifiesto con hashes. No contiene datos del Portal Académico. esperado.json conserva referencias fijadas para esta demostración; no se genera leyendo el diagnóstico ni constituye validación independiente.
+
+En cada vista hay 17 resultados fuente y 18 observaciones, porque una regla axe contiene dos nodos. Una coincidencia simulada documentada reúne dos observaciones desfavorables del mismo problema y elemento; el otro nodo permanece independiente. Quedan nueve hallazgos/casos de atención y nueve recomendaciones por vista. Los conteos incluyen incertidumbre y mejora de métricas, no solo infracciones confirmadas.
+
+### Manifiesto y compatibilidad de contexto
+
+El manifiesto identifica idCaso, titulo, tipoDatos (simulados/publicos/institucionales), alcance y vistas. Cada vista declara idModuloVista, nombre, URL exacta y grupos.
+
+Cada grupo declara idGrupo, idEvaluacion, inicio/fin con zona horaria, perfilAcceso, perfilRendimiento (mobile/desktop/null), condicionesDeclaradas, justificacionComparabilidad, fuentes y coincidencias opcionales.
+
+Cada fuente identifica idFuente, ruta (relativa al manifiesto o absoluta) y sha256 del **archivo clasificado**. Se comprueban bytes, decisiones mediante recálculo, historial, vista, evaluación, URL original, intervalo y perfiles conocidos. Se contrastan ventanas observadas de axe y la emulación de Lighthouse, incluidas diferencias entre fuentes aunque el manifiesto no repita esos valores. El resto de condiciones físicas no se da por verificado por escribirlo en el manifiesto.
+
+Los grupos permanecen separados; no se calculan medianas ni se elige una ejecución para ocultar otras. Una captura no puede incluirse dos veces cambiando el ID del lote. Las vistas sin fuentes y los indicadores sin observaciones siguen visibles.
+
+### Coincidencias, incertidumbre y recomendaciones
+
+No hay equivalencia automática por compartir indicador, selector o nombre de regla. Una coincidencia requiere:
+
+- idCoincidencia, referencias a idFuente/idResultado e indiceNodo cuando corresponda a axe.
+- elementoCanonico, problemaComun, responsable declarado, fechaHora con zona, fundamento y evidencia.
+- Observaciones desfavorables del mismo indicador y grupo, de herramientas distintas. Métricas e incertidumbre no se fusionan.
+
+El ejemplo muestra la forma exacta. Una declaración permite documentar XPath y CSS diferentes para un mismo elemento; el programa valida coherencia, no autentica esa identidad ni al revisor. Sin confirmación, los hallazgos permanecen separados.
+
+La última revisión humana registrada determina el estado vigente; se conserva la decisión automática y no se inventa severidad después de revisar. Las recomendaciones enlazan hallazgo, observaciones, indicador, referencias y fuentes. Las incertidumbres reciben una solicitud de revisión. Las acciones de corrección/mejora son orientativas y deben comprobarse; no identifican causas del backend.
+
+El orden técnico conserva prioridades observadas: crítica/alta/media/baja, fallos sin prioridad técnica, revisión y métricas intermedias. En cada nivel se consideran repetición de la misma comprobación bajo protocolo compatible, mínimo de elementos identificados y revisiones asociadas. Es una convención versionada del modelo, sin estimación de riesgo institucional.
+
+### Salidas y límites
+
+- diagnosticar produce JSON autocontenido: manifiesto, archivos clasificados íntegros y lotes originales, observaciones, cobertura, dimensiones, hallazgos, recomendaciones y límites.
+- informe recalcula y verifica la integración desde los datos embebidos antes de producir Markdown. No necesita que sigan disponibles las rutas de entrada originales.
+- El resumen entre vistas es descriptivo. Las diferencias de métricas requieren un protocolo de comparación explícito; no hay rankings.
+- Los hashes comprueban coherencia, no autenticidad. El historial conserva enlaces a versiones previas; sin esos archivos no se verifica toda la cadena.
+- No se crea un estado favorable por ausencia. P-06 sigue siendo contexto.
+- La aplicación institucional, la evaluación DSR y las ejecuciones formales del plan DP mantienen sus procedimientos y evidencias propios.
+
+### Archivos nuevos de esta etapa
+
+- src/modelo_calidad_web/integracion/modelos.py: contratos de entrada y diagnóstico.
+- src/modelo_calidad_web/integracion/motor.py: comprobación, agrupación y recomendaciones.
+- src/modelo_calidad_web/integracion/informe.py: informe Markdown verificado.
+- src/modelo_calidad_web/catalogos/reglas_integracion_v2.json: políticas y acciones vigentes (1.1.0); v1 conserva el historial.
+- scripts/preparar_ejemplo_incremento_4.py: preparación reproducible del ejemplo simulado.
+- datos/ejemplos/incremento_4/: entradas controladas y referencia.
+- tests/test_integracion.py: integración, coherencia, errores y límites.
+
+### Correcciones de auditoría 0.4.1
+
+La versión 0.4.1 cierra los problemas técnicos reproducidos en la auditoría de los cuatro incrementos. El diagnóstico se regenera con reglas de integración **1.1.0** y un catálogo explícito de alcance por indicador. Los archivos de evidencia anteriores se conservan.
+
+- La identidad de captura usa el objeto JSON canónico, además de conservar hashes de bytes. Reformatear un reporte no permite sumarlo otra vez.
+- Se comprueban las dimensiones disponibles de axe y screenEmulation de Lighthouse contra el grupo y entre fuentes. Las condiciones físicas ausentes siguen siendo declaraciones.
+- validar usa JSON estricto, rechaza claves repetidas y no finitos, y exige zona horaria.
+- Los catálogos rechazan identificadores repetidos, campos obligatorios insuficientes y dimensiones inexistentes.
+- Las nuevas clasificaciones embeben textoLoteImportado exacto. Se comprueba su huella y correspondencia con entradaImportada. Una salida histórica de tipo archivo sin ese texto se declara **no comprobada** para esa huella; sus decisiones sí se recalculan.
+- Una revisión no puede preceder a la captura. Para una regla axe con varios nodos es obligatorio indicar alcance: nodo con indiceNodo entero, o resultado_completo. La revisión de un nodo no cambia los demás; se conserva el historial. Una revisión histórica multinodo sin alcance debe revisarse y documentarse expresamente; el programa no supone que cubrió todos.
+- El diagnóstico incluye fichas técnicas de los veinte indicadores: fuente concreta, unidad, regla y límite real. A-09 no acredita todo el teclado, A-03 no cubre todos los campos y P-06 continúa contextual.
+
+Ejemplo de revisión parcial (simulada; completar datos reales solo después de revisar):
+
+~~~json
+{
+  "idResultado": "ID_DEL_RESULTADO",
+  "alcance": "nodo",
+  "indiceNodo": 0,
+  "responsable": "REVISOR SIMULADO",
+  "fechaHora": "2026-11-04T11:00:00-05:00",
+  "estadoRevisado": "favorable",
+  "fundamento": "SIMULADO: se revisó únicamente el nodo 0.",
+  "evidencia": "EVIDENCIA SIMULADA DEL NODO 0"
+}
+~~~
+
+Para preparar también una comparación controlada:
+
+~~~powershell
+.\.venv\Scripts\python.exe -B scripts/preparar_ejemplo_incremento_4.py --comparar --salida salidas/ejemplo_comparacion_041
+.\.venv\Scripts\python.exe -B -m modelo_calidad_web diagnosticar salidas/ejemplo_comparacion_041/manifiesto.json --salida salidas/ejemplo_comparacion_041/diagnostico.json
+.\.venv\Scripts\python.exe -B -m modelo_calidad_web informe salidas/ejemplo_comparacion_041/diagnostico.json --salida salidas/ejemplo_comparacion_041/informe.md
+~~~
+
+El campo opcional comparaciones del manifiesto requiere idComparacion, grupos de vistas diferentes, protocolo, responsable, fechaHora con zona, maxDiferenciaSegundos y condicionesComunes (navegador, red, cpu, ventanaAncho y ventanaAlto). El programa contrasta declaraciones entre grupos, perfiles, versiones, intervalo y configuración conservada. Solo muestra diferencias numéricas de una métrica si existe una medición admitida por grupo y configuraciones compatibles. Si faltan mediciones o hay varias capturas, se muestran todas sin promedio ni elección automática.
+
+La frecuencia expresa vistas con la misma comprobación/estado bajo un protocolo compatible; no prueba que tengan la misma causa. Los conteos de elementos se presentan como mínimo identificable y máximo de ubicaciones, unidos solo por equivalencias documentadas. Los desempates consideran ese mínimo por indicador/estado dentro del grupo; no se suman dos evidencias como dos elementos confirmados.
+
+**Compatibilidad:** importar/clasificar conservan sus perfiles anteriores; los manifiestos 0.4.0 se pueden volver a procesar. Los diagnósticos derivados 0.4.0 no se reinterpretan silenciosamente: informe pide regenerarlos desde su manifiesto con diagnosticar y una salida nueva. El catálogo de integración v1 y los informes anteriores permanecen como evidencia histórica. El catálogo vigente es reglas_integracion_v2.json (1.1.0), junto con alcance_indicadores_v1.json.
+
+Estas correcciones no ejecutan la aplicación institucional, no completan automáticamente las fichas DP y no equivalen a evaluación DSR o validación experta.

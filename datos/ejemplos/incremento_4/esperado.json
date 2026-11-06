@@ -1,0 +1,31 @@
+{
+  "nota": "Referencia preparada a partir de los datos simulados y las reglas documentadas, no de la salida del integrador. No es validación independiente ni dato del portal.",
+  "porVista": {
+    "resultadosFuente": 17,
+    "observaciones": 18,
+    "observacionesDesfavorablesSinLCP": 7,
+    "observacionesRevision": 2,
+    "observacionesContextuales": 3,
+    "observacionesNoEvaluadas": 1,
+    "coincidenciasConfirmadas": 1,
+    "hallazgosA01": 3,
+    "hallazgosDesfavorablesA01": 2,
+    "hallazgoCoincidenteMiembros": 2
+  },
+  "inicio": {
+    "hallazgos": 9,
+    "recomendaciones": 9,
+    "LCP": {
+      "valor": 3200,
+      "estado": "intermedio"
+    }
+  },
+  "cursos": {
+    "hallazgos": 9,
+    "recomendaciones": 9,
+    "LCP": {
+      "valor": 4500,
+      "estado": "desfavorable"
+    }
+  }
+}

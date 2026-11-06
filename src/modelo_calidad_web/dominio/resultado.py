@@ -47,6 +47,13 @@ class ResultadoNormalizado(BaseModel):
     # Campo de implementación para cumplir RN-01: conserva el registro fuente.
     datos_originales: dict[str, Any] = Field(alias="datosOriginales")
 
+    @field_validator("fecha_hora")
+    @classmethod
+    def fecha_con_zona(cls, fecha):
+        if fecha.tzinfo is None:
+            raise ValueError("fechaHora requiere zona horaria explícita")
+        return fecha
+
     @field_validator("id_resultado")
     @classmethod
     def validar_id_resultado(cls, value: str | int) -> str | int:

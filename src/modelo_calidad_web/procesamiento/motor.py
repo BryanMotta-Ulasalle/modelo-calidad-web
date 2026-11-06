@@ -11,6 +11,7 @@ from typing import Any
 from pydantic import ValidationError
 
 from modelo_calidad_web.dominio.enumeraciones import EstadoNormalizado, TipoResultado
+from modelo_calidad_web.json_seguro import json_estricto
 from modelo_calidad_web.importacion import ErrorImportacion, LoteImportado, ResultadoImportado, importar_datos
 
 from .modelos import CoberturaFuente, CoberturaIndicador, Decision, LoteProcesado, ResultadoProcesado
@@ -20,24 +21,6 @@ class ErrorProcesamiento(ValueError):
     def __init__(self, codigo: str, detalle: str):
         self.codigo = codigo
         super().__init__(detalle)
-
-
-def json_estricto(texto: str) -> Any:
-    def constante(valor):
-        raise ValueError(f"constante JSON no admitida: {valor}")
-
-    def pares(items):
-        objeto = {}
-        for clave, valor in items:
-            if clave in objeto:
-                raise ValueError(f"clave JSON repetida: {clave}")
-            objeto[clave] = valor
-        return objeto
-
-    datos = json.loads(texto, parse_constant=constante, object_pairs_hook=pares)
-    # También detecta desbordamiento como 1e999, incluso dentro de evidencia.
-    json.dumps(datos, allow_nan=False)
-    return datos
 
 
 def _json(objeto: Any) -> str:
@@ -323,6 +306,7 @@ def clasificar_lote(lote: LoteImportado, *, archivo_intermedio: bytes | None = N
         sha256_catalogo_mapeos=hashlib.sha256(bytes_mapeos).hexdigest(),
         sha256_lote_importado=hashlib.sha256(contenido).hexdigest(),
         tipo_hash_entrada="archivo" if archivo_intermedio is not None else "representacion_json",
+        texto_lote_importado=contenido.decode("utf-8"),
         fecha_procesamiento=datetime.now(timezone.utc),
         motor_fuente={"axe-core-playwright": "axe-core", "wave-extension-captura-v1": "WAVE Extension", "wave-extension-captura-v2": "WAVE Extension",
                       "lighthouse-result": "Lighthouse"}[lote.formato_fuente],

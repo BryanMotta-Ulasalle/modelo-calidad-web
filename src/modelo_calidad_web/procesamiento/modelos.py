@@ -4,9 +4,9 @@ No se cambia ResultadoNormalizado de 0.1 para simular valores de impacto ausente
 """
 
 from datetime import datetime
-from typing import Any, Literal
+from typing import Annotated, Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, StringConstraints, field_validator, model_validator
 from pydantic.alias_generators import to_camel
 
 from modelo_calidad_web.dominio.enumeraciones import EstadoNormalizado, Prioridad
@@ -61,6 +61,14 @@ class RevisionHumana(Registro):
     estado_revisado: EstadoNormalizado
     fundamento: str = Field(min_length=1)
     evidencia: str = Field(min_length=1)
+    alcance: Literal["resultado_completo", "nodo"] | None = None
+    indice_nodo: Annotated[int, Field(strict=True, ge=0)] | None = None
+
+    @model_validator(mode="after")
+    def alcance_coherente(self):
+        if (self.alcance == "nodo") != (self.indice_nodo is not None):
+            raise ValueError("alcance nodo requiere indiceNodo; resultado completo no admite índice")
+        return self
 
     @field_validator("fecha_hora")
     @classmethod
@@ -86,6 +94,7 @@ class LoteProcesado(Registro):
     sha256_catalogo_mapeos: str = Field(pattern=r"^[0-9a-f]{64}$")
     sha256_lote_importado: str = Field(pattern=r"^[0-9a-f]{64}$")
     tipo_hash_entrada: Literal["archivo", "representacion_json"]
+    texto_lote_importado: Annotated[str, StringConstraints(strip_whitespace=False)] | None = None
     fecha_procesamiento: datetime
     motor_fuente: str
     entrada_importada: LoteImportado

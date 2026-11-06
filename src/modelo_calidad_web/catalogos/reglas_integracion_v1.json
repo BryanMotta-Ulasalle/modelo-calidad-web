@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "referenciaDiseno": "Capítulo 5: RN-07, RI-01 a RI-10, DS-01 a DS-11; decisiones I-01 a I-12 en especificación operativa del cuarto incremento.",
+  "politicaCoincidencias": "Solo coincidencias documentadas de observaciones desfavorables, mismo grupo e indicador, herramientas distintas. Sin inferir equivalencia por selector.",
+  "ordenTecnico": [
+    "critica",
+    "alta",
+    "media",
+    "baja",
+    "desfavorable_sin_prioridad",
+    "revision",
+    "intermedio"
+  ],
+  "acciones": {
+    "A-01": "Revisar las alternativas textuales de los elementos señalados y ajustar su descripción según su función; volver a comprobar.",
+    "A-02": "Revisar la estructura semántica y la organización de las regiones y encabezados señalados; volver a comprobar.",
+    "A-03": "Revisar la asociación de etiquetas y nombres accesibles de los campos señalados; volver a comprobar.",
+    "A-04": "Revisar y ajustar el contraste de texto de los elementos señalados según el criterio relacionado; volver a comprobar.",
+    "A-05": "Revisar el título de la vista y su identificación del contenido; volver a comprobar.",
+    "A-06": "Revisar la declaración de idioma del documento señalado; volver a comprobar.",
+    "A-07": "Revisar el nombre accesible y propósito de los enlaces o controles señalados; volver a comprobar.",
+    "A-08": "Revisar los atributos ARIA señalados y su correspondencia con la semántica del componente; volver a comprobar.",
+    "A-09": "Revisar la condición de enfoque de los marcos y elementos señalados; complementar la comprobación parcial con revisión de teclado.",
+    "U-01": "Revisar la configuración adaptable de la vista señalada, conforme a la auditoría y versión que aportan evidencia; volver a comprobar.",
+    "U-02": "Revisar las restricciones de ampliación de la vista señalada; volver a comprobar.",
+    "U-03": "Revisar el tamaño y separación de los objetivos táctiles señalados; volver a comprobar.",
+    "U-04": "Revisar los campos señalados y permitir el pegado cuando corresponda; volver a comprobar.",
+    "U-05": "Examinar los errores de ejecución informados y comprobar su impacto observable en la interacción antes de proponer una corrección.",
+    "P-01": "Investigar la aparición del primer contenido visible bajo el perfil documentado; revisar evidencia de carga y volver a medir sin atribuir una causa interna.",
+    "P-02": "Investigar la carga del contenido principal de mayor tamaño bajo el perfil documentado; revisar evidencia y volver a medir sin atribuir una causa interna.",
+    "P-03": "Investigar los periodos de bloqueo observados en laboratorio; revisar evidencia de la ejecución y volver a medir sin atribuir una causa interna.",
+    "P-04": "Investigar los desplazamientos visuales observados durante la carga; revisar elementos implicados y volver a medir.",
+    "P-05": "Investigar la progresión visual de la carga bajo el perfil documentado; revisar evidencia y volver a medir sin atribuir una causa interna."
+  },
+  "limitaciones": [
+    "Diagnóstico parcial de las vistas, reglas y condiciones declaradas; no evaluación completa de usabilidad ni certificación WCAG.",
+    "Sin puntaje global, promedio entre dimensiones, estado único por indicador ni ranking de vistas.",
+    "Las condiciones, el tipo de datos, la comparabilidad y las coincidencias son declaraciones documentadas; no autentican al responsable.",
+    "Los hashes y el recálculo comprueban coherencia de los datos conservados, no autoría o veracidad de las capturas.",
+    "Cada grupo conserva sus métricas individuales. No se calculan medianas ni se mezclan perfiles o capturas.",
+    "Conteos de observaciones por nodo/regla distintos de resultados fuente y de hallazgos consolidados; no representan todos los elementos de una página.",
+    "Las revisiones conservan su historia, pero sin los archivos previos no se verifica la cadena completa de hashes ni la identidad del revisor.",
+    "Recomendaciones orientativas sobre evidencia de presentación: no prueban una mejora aplicada ni causas del backend.",
+    "La ordenación técnica es una convención del modelo; las prioridades automáticas de revisión no se transforman en severidad humana."
+  ]
+}
+

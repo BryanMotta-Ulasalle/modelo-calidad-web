@@ -1,10 +1,10 @@
-import json
 from dataclasses import dataclass
 from importlib.resources import files
 from pathlib import Path
 from typing import Any
 
 from modelo_calidad_web.dominio.resultado import ResultadoNormalizado
+from modelo_calidad_web.json_seguro import json_estricto
 
 
 class ErrorCatalogo(ValueError):
@@ -12,11 +12,27 @@ class ErrorCatalogo(ValueError):
 
 
 def _cargar_json(ruta) -> list[dict[str, Any]]:
-    with ruta.open("r", encoding="utf-8") as archivo:
-        contenido = json.load(archivo)
-    if not isinstance(contenido, list):
-        raise ErrorCatalogo(f"El catálogo {ruta} debe contener una lista JSON")
+    try:
+        contenido = json_estricto(ruta.read_text(encoding="utf-8"))
+    except (OSError, ValueError, UnicodeError) as error:
+        raise ErrorCatalogo(f"No se puede leer {ruta}: {error}") from error
+    if not isinstance(contenido, list) or not contenido:
+        raise ErrorCatalogo(f"El catálogo {ruta} debe contener una lista no vacía")
     return contenido
+
+
+def _indexar(filas, clave, campos, nombre):
+    indice = {}
+    for fila in filas:
+        if not isinstance(fila, dict) or any(
+                not isinstance(fila.get(c), str) or not fila[c].strip() for c in campos):
+            raise ErrorCatalogo(f"Campos obligatorios inválidos en {nombre}")
+        valor = fila[clave]
+        if valor != valor.strip() or valor in indice:
+            raise ErrorCatalogo(f"Identificador repetido o con espacios en {nombre}: {valor}")
+        indice[valor] = fila
+    return indice
+
 
 
 @dataclass(frozen=True)
@@ -63,11 +79,18 @@ def cargar_catalogos(directorio: str | Path | None = None) -> Catalogos:
     prioridades_lista = _cargar_json(base.joinpath("prioridades.json"))
     reglas_lista = _cargar_json(base.joinpath("reglas_normalizacion.json"))
 
-    return Catalogos(
-        dimensiones={item["id"]: item for item in dimensiones_lista},
-        indicadores={item["id"]: item for item in indicadores_lista},
-        estados={item["valor"]: item for item in estados_lista},
-        prioridades={item["valor"] for item in prioridades_lista},
-        reglas_normalizacion={item["id"]: item for item in reglas_lista},
-    )
-
+    dimensiones = _indexar(dimensiones_lista, "id", ("id", "nombre", "proposito"), "dimensiones")
+    indicadores = _indexar(indicadores_lista, "id", ("id", "nombre", "dimension"), "indicadores")
+    estados = _indexar(estados_lista, "valor", ("id", "valor", "nombre"), "estados")
+    _indexar(estados_lista, "id", ("id",), "estados")
+    prioridades = _indexar(prioridades_lista, "valor", ("valor", "nombre"), "prioridades")
+    reglas = _indexar(reglas_lista, "id", ("id", "nombre", "descripcion"), "reglas")
+    for indicador in indicadores.values():
+        if indicador["dimension"] not in dimensiones:
+            raise ErrorCatalogo(f"Dimensión inexistente de {indicador['id']}")
+        referencias = indicador.get("referencias")
+        if referencias is not None and (not isinstance(referencias, list) or not referencias
+                or any(not isinstance(r, str) or not r.strip() for r in referencias)):
+            raise ErrorCatalogo(f"Referencias inválidas de {indicador['id']}")
+    return Catalogos(dimensiones=dimensiones, indicadores=indicadores, estados=estados,
+                     prioridades=set(prioridades), reglas_normalizacion=reglas)

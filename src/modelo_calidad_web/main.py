@@ -1,19 +1,19 @@
 import argparse
-import json
 import sys
 from pathlib import Path
 
 from pydantic import ValidationError
 
 from .dominio.resultado import ResultadoNormalizado
+from .json_seguro import json_estricto
 from .importacion import ErrorImportacion, importar_archivo
+from .integracion import diagnosticar_archivo, generar_informe
 from .procesamiento import ErrorProcesamiento, clasificar_archivo, registrar_revision_archivo
 from .validacion.catalogos import ErrorCatalogo, cargar_catalogos
 
 
 def validar_archivo(ruta: Path, directorio_catalogos: str | None = None) -> None:
-    with ruta.open("r", encoding="utf-8") as archivo:
-        datos = json.load(archivo)
+    datos = json_estricto(ruta.read_bytes().decode("utf-8"))
 
     resultado = ResultadoNormalizado.model_validate(datos)
     catalogos = cargar_catalogos(directorio_catalogos)
@@ -23,7 +23,7 @@ def validar_archivo(ruta: Path, directorio_catalogos: str | None = None) -> None
 def construir_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="modelo-calidad-web",
-        description="Valida, importa y clasifica datos para el modelo de calidad web.",
+        description="Valida, importa, clasifica e integra datos para el modelo de calidad web.",
     )
     subparsers = parser.add_subparsers(dest="comando", required=True)
     validar = subparsers.add_parser(
@@ -64,6 +64,14 @@ def construir_parser() -> argparse.ArgumentParser:
     revisar.add_argument("--registro", type=Path, required=True,
                          help="JSON con responsable, fecha, estado revisado, fundamento y evidencia.")
     revisar.add_argument("--salida", type=Path, required=True, help="Archivo nuevo con el historial ampliado.")
+    diagnosticar = subparsers.add_parser(
+        "diagnosticar", help="Integra lotes clasificados según un manifiesto explícito de vistas y contextos."
+    )
+    diagnosticar.add_argument("archivo", type=Path, help="Manifiesto JSON del caso.")
+    diagnosticar.add_argument("--salida", type=Path, required=True, help="Diagnóstico JSON nuevo.")
+    informe = subparsers.add_parser("informe", help="Verifica un diagnóstico y genera un informe Markdown.")
+    informe.add_argument("archivo", type=Path, help="Diagnóstico JSON del cuarto incremento.")
+    informe.add_argument("--salida", type=Path, required=True, help="Informe Markdown nuevo.")
     return parser
 
 
@@ -76,7 +84,7 @@ def main(argv: list[str] | None = None) -> int:
             try:
                 validar_archivo(ruta, args.catalogos)
                 print(f"[OK] {ruta}: resultado válido")
-            except (OSError, json.JSONDecodeError, ValidationError, ErrorCatalogo) as error:
+            except (OSError, ValueError, UnicodeError) as error:
                 errores += 1
                 print(f"[ERROR] {ruta}: {error}", file=sys.stderr)
 
@@ -91,6 +99,23 @@ def main(argv: list[str] | None = None) -> int:
                 archivo.write("\n")
             print(f"[OK] {args.archivo}: {len(lote.resultados)} resultado(s) importado(s) a {args.salida}; estados pendientes")
         except ErrorImportacion as error:
+            errores += 1
+            print(f"[ERROR:{error.codigo}] {args.archivo}: {error}", file=sys.stderr)
+        except OSError as error:
+            errores += 1
+            print(f"[ERROR:ARCHIVO] {args.archivo}: {error}", file=sys.stderr)
+
+    if args.comando in {"diagnosticar", "informe"}:
+        try:
+            if args.comando == "diagnosticar":
+                diagnostico = diagnosticar_archivo(args.archivo)
+                texto = diagnostico.model_dump_json(by_alias=True, indent=2) + "\n"
+            else:
+                texto = generar_informe(args.archivo)
+            with args.salida.open("x", encoding="utf-8") as archivo:
+                archivo.write(texto)
+            print(f"[OK] {args.comando}: {args.salida}")
+        except ErrorProcesamiento as error:
             errores += 1
             print(f"[ERROR:{error.codigo}] {args.archivo}: {error}", file=sys.stderr)
         except OSError as error:

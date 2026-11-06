@@ -28,6 +28,7 @@ class RevisionTest(unittest.TestCase):
         self.ruta.write_text(self.lote.model_dump_json(by_alias=True, indent=2), encoding="utf-8")
         self.registro = {
             "idResultado": self.resultado.origen.id_resultado,
+            "alcance": "resultado_completo",
             "responsable": "REVISOR SIMULADO PARA PRUEBA",
             "fechaHora": "2026-10-29T12:00:00-05:00",
             "estadoRevisado": "desfavorable",

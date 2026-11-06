@@ -1,0 +1,148 @@
+{
+  "url": "https://simulado.invalid/cursos",
+  "timestamp": "2026-11-04T10:01:00-05:00",
+  "testEngine": {
+    "name": "axe-core",
+    "version": "ejemplo-controlado"
+  },
+  "testRunner": {
+    "name": "axe",
+    "version": "ejemplo-controlado"
+  },
+  "testEnvironment": {
+    "userAgent": "ejemplo-controlado",
+    "windowWidth": 390,
+    "windowHeight": 844
+  },
+  "toolOptions": {
+    "runOnly": {
+      "type": "tag",
+      "values": [
+        "wcag2a",
+        "wcag2aa"
+      ]
+    }
+  },
+  "passes": [
+    {
+      "id": "html-has-lang",
+      "impact": null,
+      "description": "Dato controlado para pruebas de integración",
+      "help": "REGLA SIMULADA",
+      "helpUrl": "https://example.invalid/axe-rule",
+      "tags": [
+        "wcag2aa"
+      ],
+      "nodes": [
+        {
+          "target": [
+            "html"
+          ],
+          "html": "<elemento-simulado>",
+          "failureSummary": "EVIDENCIA SIMULADA"
+        }
+      ]
+    }
+  ],
+  "incomplete": [
+    {
+      "id": "link-name",
+      "impact": "serious",
+      "description": "Dato controlado para pruebas de integración",
+      "help": "REGLA SIMULADA",
+      "helpUrl": "https://example.invalid/axe-rule",
+      "tags": [
+        "wcag2aa"
+      ],
+      "nodes": [
+        {
+          "target": [
+            "#enlace-revisar"
+          ],
+          "html": "<elemento-simulado>",
+          "failureSummary": "EVIDENCIA SIMULADA"
+        }
+      ]
+    }
+  ],
+  "inapplicable": [
+    {
+      "id": "landmark-one-main",
+      "impact": null,
+      "description": "Dato controlado para pruebas de integración",
+      "help": "REGLA SIMULADA",
+      "helpUrl": "https://example.invalid/axe-rule",
+      "tags": [
+        "wcag2aa"
+      ],
+      "nodes": []
+    }
+  ],
+  "violations": [
+    {
+      "id": "image-alt",
+      "impact": "serious",
+      "description": "Dato controlado para pruebas de integración",
+      "help": "REGLA SIMULADA",
+      "helpUrl": "https://example.invalid/axe-rule",
+      "tags": [
+        "wcag2aa"
+      ],
+      "nodes": [
+        {
+          "target": [
+            "#logo"
+          ],
+          "html": "<elemento-simulado>",
+          "failureSummary": "EVIDENCIA SIMULADA"
+        },
+        {
+          "target": [
+            "#otra-imagen"
+          ],
+          "html": "<elemento-simulado>",
+          "failureSummary": "EVIDENCIA SIMULADA"
+        }
+      ]
+    },
+    {
+      "id": "meta-viewport",
+      "impact": "serious",
+      "description": "Dato controlado para pruebas de integración",
+      "help": "REGLA SIMULADA",
+      "helpUrl": "https://example.invalid/axe-rule",
+      "tags": [
+        "wcag2aa"
+      ],
+      "nodes": [
+        {
+          "target": [
+            "meta[name='viewport']"
+          ],
+          "html": "<elemento-simulado>",
+          "failureSummary": "EVIDENCIA SIMULADA"
+        }
+      ]
+    },
+    {
+      "id": "color-contrast",
+      "impact": "moderate",
+      "description": "Dato controlado para pruebas de integración",
+      "help": "REGLA SIMULADA",
+      "helpUrl": "https://example.invalid/axe-rule",
+      "tags": [
+        "wcag2aa"
+      ],
+      "nodes": [
+        {
+          "target": [
+            "#contrast"
+          ],
+          "html": "<elemento-simulado>",
+          "failureSummary": "EVIDENCIA SIMULADA"
+        }
+      ]
+    }
+  ],
+  "notaControlada": "Objeto con las secciones de axe.run, creado manualmente para pruebas; no es salida real de Playwright"
+}
