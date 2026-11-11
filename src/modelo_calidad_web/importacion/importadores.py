@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from modelo_calidad_web.dominio.enumeraciones import Herramienta, TipoResultado
+from modelo_calidad_web.json_seguro import json_estricto
 from modelo_calidad_web.validacion.catalogos import cargar_catalogos
 
 from .modelos import LoteImportado, ResultadoImportado
@@ -81,9 +82,8 @@ def _fecha(objeto: dict[str, Any], clave: str, lugar: str) -> datetime:
 def _mapeos(ruta: str | Path | None) -> tuple[str, dict[str, Any]]:
     ubicacion = Path(ruta) if ruta is not None else files("modelo_calidad_web").joinpath("catalogos/mapeos_fuentes_v1.json")
     try:
-        with ubicacion.open("r", encoding="utf-8") as archivo:
-            catalogo = json.load(archivo)
-    except (OSError, json.JSONDecodeError) as error:
+        catalogo = json_estricto(ubicacion.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
         raise ErrorImportacion("FORMATO", f"no se puede leer el catálogo de mapeos: {error}") from error
     _objeto(catalogo, "catálogo de mapeos")
     version = _texto(catalogo, "version", "catálogo de mapeos")

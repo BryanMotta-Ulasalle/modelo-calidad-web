@@ -139,6 +139,20 @@ class ImportacionTest(unittest.TestCase):
                 importar_datos(datos, CASOS[0][0], "EVAL", "MOD", catalogo_mapeos=ruta)
             self.assertEqual(contexto.exception.codigo, "FORMATO")
 
+    def test_catalogo_mapeos_rechaza_clave_json_repetida(self):
+        datos = self.cargar(CASOS[2][1])
+        ruta_catalogo = RAIZ / "src" / "modelo_calidad_web" / "catalogos" / "mapeos_fuentes_v1.json"
+        texto = ruta_catalogo.read_text(encoding="utf-8")
+        linea = '      "largest-contentful-paint": {"indicador": "P-02", "dimension": "D-RE", "referencias": ["Lighthouse: largest-contentful-paint"], "unidadOrigen": "millisecond"},'
+        self.assertEqual(texto.count(linea), 1)
+        with tempfile.TemporaryDirectory() as temporal:
+            ruta = Path(temporal) / "mapeos.json"
+            ruta.write_text(texto.replace(linea, linea + "\n" + linea), encoding="utf-8")
+            with self.assertRaises(ErrorImportacion) as contexto:
+                importar_datos(datos, CASOS[2][0], "EVAL", "MOD", catalogo_mapeos=ruta)
+            self.assertEqual(contexto.exception.codigo, "FORMATO")
+            self.assertIn("clave JSON repetida: largest-contentful-paint", str(contexto.exception))
+
     def test_cli_crea_salida_y_no_sobrescribe(self):
         ruta = RAIZ / "datos" / "ejemplos" / CASOS[0][1]
         with tempfile.TemporaryDirectory() as temporal:
